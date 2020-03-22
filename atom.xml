@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kakashisese.github.io</id>
     <title>用画笔记录生活</title>
-    <updated>2020-03-22T08:23:11.011Z</updated>
+    <updated>2020-03-22T08:24:28.778Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kakashisese.github.io"/>
     <link rel="self" href="https://kakashisese.github.io/atom.xml"/>
@@ -10,6 +10,84 @@
     <logo>https://kakashisese.github.io/images/avatar.png</logo>
     <icon>https://kakashisese.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 用画笔记录生活</rights>
+    <entry>
+        <title type="html"><![CDATA[「网络流 24 题」搭配飞行员]]></title>
+        <id>https://kakashisese.github.io/post/wang-luo-liu-24-ti-da-pei-fei-xing-yuan/</id>
+        <link href="https://kakashisese.github.io/post/wang-luo-liu-24-ti-da-pei-fei-xing-yuan/">
+        </link>
+        <updated>2020-03-22T08:23:29.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="网络流-24-题搭配飞行员"><em><strong>「网络流 24 题」搭配飞行员</strong></em></h1>
+<h2 id="问题描述">问题描述</h2>
+<blockquote>
+<p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员，需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。<br>
+因为驾驶工作分工严格，两个正驾驶员或两个副驾驶员都不能同机飞行。</p>
+</blockquote>
+<h2 id="输入格式">输入格式</h2>
+<blockquote>
+<p>第一行，两个整数 n与 m，表示共有 n个飞行员，其中有 m名飞行员是正驾驶员。<br>
+下面有若干行，每行有 2个数字 a、b。表示正驾驶员 a和副驾驶员 b可以同机飞行。<br>
+注：正驾驶员的编号在前，即正驾驶员的编号小于副驾驶员的编号。</p>
+</blockquote>
+<h2 id="输出格式">输出格式</h2>
+<blockquote>
+<p>仅一行一个整数，表示最大起飞的飞机数。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<blockquote>
+<p>10 5<br>
+1 7<br>
+2 6<br>
+2 10<br>
+3 7<br>
+4 8<br>
+5 9</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>4</p>
+</blockquote>
+<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
+<blockquote>
+<p>这是一道二分图匹配问题。<br>
+建图思路就是 <em><strong>给可以一起驾驶飞机的正驾驶员和副驾驶员连一条边，即：给每次输入的a和b连边。</strong></em> 连完后跑一遍二分图匈牙利算法求出最大匹配即可。</p>
+</blockquote>
+<h3 id="代码"><em><strong>代码</strong></em></h3>
+<pre><code class="language-c">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+using namespace std;
+const int Max = 100 + 5;
+vector&lt;int&gt; g[Max];
+int n, m, vis[Max], lin[Max], I;
+int xyl(int x) { //匈牙利算法
+    for (int i = 0; i &lt; g[x].size(); i++) {
+        int v = g[x][i];
+        if(vis[v] != I) {
+            vis[v] = I;
+            if(!lin[v] || xyl(lin[v])) {
+                lin[v] = x;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int main() {
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    int a, b;
+    while(scanf(&quot;%d %d&quot;, &amp;a, &amp;b) == 2) { //读入
+        g[a].push_back(b); //连边
+    }
+    int ans = 0;
+    for (I = 1; I &lt;= m; I++) //求最大匹配
+        ans += xyl(I);
+    printf(&quot;%d&quot;, ans);
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://kakashisese.github.io/post/hello-gridea/</id>

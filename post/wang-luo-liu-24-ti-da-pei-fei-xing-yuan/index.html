@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>Hello Gridea | 用画笔记录生活</title>
+<title>「网络流 24 题」搭配飞行员 | 用画笔记录生活</title>
 <meta name="description" content="艺术就是生命">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -87,45 +87,99 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>Hello Gridea</h1>
+            <h1>「网络流 24 题」搭配飞行员</h1>
             <p class="article-meta">
-              2018-12-12
-              
-                <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge success">
-                  Gridea
-                </a>
+              2020-03-22
               
             </p>
             
-              <img src="https://kakashisese.github.io/post-images/hello-gridea.png" alt="Hello Gridea">
-            
             <div class="post-content">
-              <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+              <h1 id="网络流-24-题搭配飞行员"><em><strong>「网络流 24 题」搭配飞行员</strong></em></h1>
+<h2 id="问题描述">问题描述</h2>
+<blockquote>
+<p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员，需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。<br>
+因为驾驶工作分工严格，两个正驾驶员或两个副驾驶员都不能同机飞行。</p>
+</blockquote>
+<h2 id="输入格式">输入格式</h2>
+<blockquote>
+<p>第一行，两个整数 n与 m，表示共有 n个飞行员，其中有 m名飞行员是正驾驶员。<br>
+下面有若干行，每行有 2个数字 a、b。表示正驾驶员 a和副驾驶员 b可以同机飞行。<br>
+注：正驾驶员的编号在前，即正驾驶员的编号小于副驾驶员的编号。</p>
+</blockquote>
+<h2 id="输出格式">输出格式</h2>
+<blockquote>
+<p>仅一行一个整数，表示最大起飞的飞机数。</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<blockquote>
+<p>10 5<br>
+1 7<br>
+2 6<br>
+2 10<br>
+3 7<br>
+4 8<br>
+5 9</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>4</p>
+</blockquote>
+<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
+<blockquote>
+<p>这是一道二分图匹配问题。<br>
+建图思路就是 <em><strong>给可以一起驾驶飞机的正驾驶员和副驾驶员连一条边，即：给每次输入的a和b连边。</strong></em> 连完后跑一遍二分图匈牙利算法求出最大匹配即可。</p>
+</blockquote>
+<h3 id="代码"><em><strong>代码</strong></em></h3>
+<pre><code class="language-c">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+using namespace std;
+const int Max = 100 + 5;
+vector&lt;int&gt; g[Max];
+int n, m, vis[Max], lin[Max], I;
+int xyl(int x) { //匈牙利算法
+    for (int i = 0; i &lt; g[x].size(); i++) {
+        int v = g[x][i];
+        if(vis[v] != I) {
+            vis[v] = I;
+            if(!lin[v] || xyl(lin[v])) {
+                lin[v] = x;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+int main() {
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    int a, b;
+    while(scanf(&quot;%d %d&quot;, &amp;a, &amp;b) == 2) { //读入
+        g[a].push_back(b); //连边
+    }
+    int ans = 0;
+    for (I = 1; I &lt;= m; I++) //求最大匹配
+        ans += xyl(I);
+    printf(&quot;%d&quot;, ans);
+    return 0;
+}
+</code></pre>
 
             </div>
           </article>
         </div>
         <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://kakashisese.github.io/post/hello-gridea/">
+                <h3 class="post-title">
+                  Hello Gridea
+                </h3>
+              </a>
+            </div>
           
         </div>
         
@@ -191,7 +245,7 @@
     </div>
     <div class="row">
       
-        <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge secondary">
+        <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge success">
           Gridea
         </a>
       
