@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>nkoj p3000 【nodgd造水题】嵩嵩 | 用画笔记录生活</title>
+<title>luogu p1021 邮票面值设计 | 用画笔记录生活</title>
 <meta name="description" content="艺术就是生命">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -79,132 +79,89 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>nkoj p3000 【nodgd造水题】嵩嵩</h1>
+            <h1>luogu p1021 邮票面值设计</h1>
             <p class="article-meta">
               2020-03-22
               
             </p>
             
             <div class="post-content">
-              <h1 id="nkoj-p3000-nodgd造水题嵩嵩">nkoj p3000 【nodgd造水题】嵩嵩</h1>
-<h2 id="问题描述">问题描述</h2>
+              <h1 id="luogu-p1021-邮票面值设计"><em><strong>luogu p1021 邮票面值设计</strong></em></h1>
+<h2 id="题目描述">题目描述</h2>
 <blockquote>
-<p>受何老板之托，嵩嵩在美国为何老板采购的若干吨货物。这批货物已通过水路运送到了我国某沿海城市，现在需要通过公路将这些货物运送到何老板家。嵩嵩的地图上有N(2 &lt;= N &lt;= 200) 座城市，编号1到N，嵩嵩在1号城市，何老板的家在N号城市。这N座城市间有P(1 &lt;= P &lt;= 40,000) 条双向通行的道路相连，每条道路长度不超过1,000,000。两座城市间可能有多条道路相连。<br>
-嵩嵩雇了T(1 &lt;= T &lt;= 200)辆卡车运送这批货物。为了避免被人发现或引起别人的注意，嵩嵩安排这T辆车选择不同的道路行驶，也就是同一条道路不会被走两次。<br>
-请帮助嵩嵩安排这T辆车的线路，使得走过的总长度尽量短。<br>
-嵩嵩向你保证在不走重复道路的情况下，一定能够把T车货物运到目的地。<br>
-注意：题目中描述的“道路”相当于图论中的“边”。<br>
-注：题目改编自NKOJ1605。其实是nodgd做1605的时候一开始读错题了，但是既然代码都写好了，总不能浪费了吧，所以就有了这道题！</p>
+<p>给定一个信封，最多只允许粘贴N张邮票，计算在给定K（N+K≤15）种邮票的情况下（假定所有的邮票数量都足够），如何设计邮票的面值，能得到最大值MAX，使在1至MAX之间的每一个邮资值都能得到。<br>
+例如，N=3，K=2，如果面值分别为1分、4分，则在1分～6分之间的每一个邮资值都能得到（当然还有8分、9分和12分）；如果面值分别为1分、3分，则在1分～7分之间的每一个邮资值都能得到。可以验证当N=3，K=2时，7分就是可以得到的连续的邮资最大值，所以MAX=7，面值分别为1分、3分</p>
 </blockquote>
 <h2 id="输入格式">输入格式</h2>
 <blockquote>
-<p>第一行包括三个空格间隔的整数N,P,T。<br>
-接下来P行，每行有三个空格间隔的整数A,B,C。表示城市A、B间有条长度为C的道路。</p>
+<p>2个整数，代表N，K。</p>
 </blockquote>
 <h2 id="输出格式">输出格式</h2>
 <blockquote>
-<p>一整数，表示经过的道路总长度的最小值。</p>
+<p>2行。第一行若干个数字，表示选择的面值，从小到大排序。<br>
+第二行，输出“MAX=S”，S表示最大的面值。</p>
 </blockquote>
-<h2 id="样例输入">样例输入</h2>
+<h2 id="输入样例">输入样例</h2>
 <blockquote>
-<p>7 9 2<br>
-1 2 2<br>
-2 3 5<br>
-3 7 5<br>
-1 4 1<br>
-4 3 1<br>
-4 5 7<br>
-5 7 1<br>
-1 6 3<br>
-6 7 3</p>
+<p>3 2</p>
 </blockquote>
-<h2 id="样例输出">样例输出</h2>
+<h2 id="输出样例">输出样例</h2>
 <blockquote>
-<p>13</p>
+<p>1 3<br>
+MAX=7</p>
 </blockquote>
 <h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
 <blockquote>
-<p>费用流模板题，把 <em><strong>1</strong></em> 看成原点 <em><strong>n</strong></em> 看成汇点，每条路的费用就是它的长度，每条路的容量为 <em><strong>1</strong></em>。<br>
-只需要注意一点就是只有 <em><strong>t</strong></em> 辆货车，所以当最大流达到 <em><strong>t</strong></em> 时退出找增广路，输出此时的最小费用。</p>
+<p>本题可分为两部分。<br>
+一是求在规定的 <em><strong>k</strong></em> 值中找到最大值 <em><strong>S</strong></em> 此部分可以套用完全背包模型，具体转移方程 <em><strong>f[j] = min(f[j], f[j - a[i]] + 1)</strong></em> 。<br>
+第二部分是找到所有情况中的最大值 <em><strong>S</strong></em> 我们可以采用dfs搜索，每次数量达到 <em><strong>k</strong></em> 时就更新一下 <em><strong>S</strong></em> 的值，反之继续搜索。<br>
+最终用一个 <em><strong>ans</strong></em> 数组保存答案即可。</p>
 </blockquote>
 <h3 id="代码"><em><strong>代码</strong></em></h3>
 <pre><code class="language-c">#include &lt;cstdio&gt;
 #include &lt;algorithm&gt;
-#include &lt;queue&gt;
-#include &lt;cstring&gt;
+#define inf 0x3f3f3f3f
 using namespace std;
-const int Max = (40000 + 5) &lt;&lt; 3;
-int Last[Max];
-struct Eg {
-    int Next, Child, Cost, Cap;
-} egs[Max];
-int n, p, t;
-void addegs(int num, int fr, int to, int c, int v) {
-    egs[num].Child = to;
-    egs[num].Cap = c;
-    egs[num].Cost = v;
-    egs[num].Next = Last[fr];
-    Last[fr] = num;
-}
-int dis[Max], maxflow, mincost, flow[Max], pre[Max], head[Max];
-bool vis[Max];
-queue&lt;int&gt; q;
-bool spfa(int s, int t) {
-    memset(dis, 127 / 2, sizeof(dis));
-    memset(flow, 127 / 2, sizeof(flow));
-    q.push(s);
-    dis[s] = 0;
-    vis[s] = true;
-    pre[t] = -1;
-    while(q.size()) {
-        int u = q.front();
-        q.pop();
-        vis[u] = false;
-        for (int i = Last[u]; i; i = egs[i].Next) {
-            int v = egs[i].Child;
-            if(egs[i].Cap &amp;&amp; dis[v] &gt; dis[u] + egs[i].Cost) {
-                dis[v] = dis[u] + egs[i].Cost;
-                pre[v] = u;
-                head[v] = i;
-                flow[v] = min(flow[u], egs[i].Cap);
-                if(!vis[v]) {
-                    vis[v] = true;
-                    q.push(v);
-                }
-            }
-        }
+const int Max = 1e5 + 5;
+int a[Max], ans[Max], n, k, f[Max];
+int dp(int t) {
+    f[0] = 0;
+    for (int i = 1; i &lt;= a[t] * n; i++)
+        f[i] = inf; //由于要求最小的数量，所以赋值为最大值
+    for (int i = 1; i &lt;= t; i++) {
+        for (int j = a[i]; j &lt;= a[t] * n; j++)
+            f[j] = min(f[j], f[j - a[i]] + 1); //完全背包转移方程
     }
-    return pre[t] != -1;
+    for (int i = 1; i &lt;= a[t] * n; i++) {
+        if(f[i] &gt; n)
+            return i - 1; //如果大于n说明不行，只能返回上一个数
+    }
+    return a[t] * n; //否则返回最大值
 }
-int s, T;
-void mcmf() {
-    while(spfa(1, T) &amp;&amp; maxflow &lt; t) {
-        int u = T;
-        maxflow += flow[T];
-        mincost += flow[T] * dis[T];
-        while(u != s) {
-            egs[head[u]].Cap -= flow[T];
-            egs[head[u] ^ 1].Cap += flow[T];
-            u = pre[u];
+int maxn = -1;
+void dfs(int t, int mx) {
+    if(t == k + 1) {
+        if(mx &gt; maxn) { //更新最大值
+            maxn = mx;
+            for (int i = 1; i &lt; t; i++)
+                ans[i] = a[i]; //存答案
         }
+        return;
+    }
+    for (int i = a[t - 1] + 1; i &lt;= mx + 1; i++) { //继续搜索
+        a[t] = i;
+        int x = dp(t);
+        dfs(t + 1, x);
     }
 }
 
 int main() {
-    scanf(&quot;%d %d %d&quot;, &amp;n, &amp;p, &amp;t);
-    int num = 2;
-    for(int i = 1; i &lt;= p; i++) {
-        int fr, to, c;
-        scanf(&quot;%d %d %d&quot;, &amp;fr, &amp;to, &amp;c);
-        addegs(num++, fr, to, 1, c);
-        addegs(num++, to, fr, 0, -c);
-        addegs(num++, to, fr, 1, c);
-        addegs(num++, fr, to, 0, -c);
-    }
-    s = 1;
-    T = n;
-    mcmf();
-    printf(&quot;%d&quot;, mincost);
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;k);
+    dfs(1, 0);
+    for (int i = 1; i &lt;= k; i++)
+        printf(&quot;%d &quot;, ans[i]);
+    puts(&quot;&quot;);
+    printf(&quot;MAX=%d&quot;, maxn);
     return 0;
 }
 </code></pre>
@@ -218,9 +175,9 @@ int main() {
               <div class="next">
                 下一篇
               </div>
-              <a href="https://kakashisese.github.io/post/lougu-p1168-zhong-wei-shu/">
+              <a href="https://kakashisese.github.io/post/nkoj-p3000-nodgd-zao-shui-ti-song-song/">
                 <h3 class="post-title">
-                  lougu P1168 中位数
+                  nkoj p3000 【nodgd造水题】嵩嵩
                 </h3>
               </a>
             </div>
