@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kakashisese.github.io</id>
     <title>用画笔记录生活</title>
-    <updated>2020-03-23T01:08:41.398Z</updated>
+    <updated>2020-03-23T01:10:53.501Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kakashisese.github.io"/>
     <link rel="self" href="https://kakashisese.github.io/atom.xml"/>
@@ -10,6 +10,138 @@
     <logo>https://kakashisese.github.io/images/avatar.png</logo>
     <icon>https://kakashisese.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 用画笔记录生活</rights>
+    <entry>
+        <title type="html"><![CDATA[牛客练习赛59做题心得]]></title>
+        <id>https://kakashisese.github.io/post/niu-ke-lian-xi-sai-59-zuo-ti-xin-de/</id>
+        <link href="https://kakashisese.github.io/post/niu-ke-lian-xi-sai-59-zuo-ti-xin-de/">
+        </link>
+        <updated>2020-03-23T01:10:14.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="牛客练习赛59做题心得">牛客练习赛59做题心得</h1>
+<h2 id="a题-小乔和小灰灰">A题 小乔和小灰灰</h2>
+<h2 id="问题描述">问题描述</h2>
+<blockquote>
+<p><a href="https://ac.nowcoder.com/acm/contest/4743/A">题目链接</a></p>
+</blockquote>
+<h2 id="一点小想法"><em><strong>一点小想法</strong></em></h2>
+<blockquote>
+<p>这道题有很多种做法，我在这里采用的是动态规划的方法。<br>
+我们可以让原字符串和 <em><strong>XiaoQiao</strong></em>， <em><strong>XiaoHuiHui</strong></em> 两个字符串分别跑最长公共子序列，如果最长公共子序列等于字符串的长度就说明原字符串中包含这个字符串。<br>
+最后如果两个都包含，那么就输出 <em><strong>Happy</strong></em>。</p>
+</blockquote>
+<h3 id="代码"><em><strong>代码</strong></em></h3>
+<pre><code class="language-c">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int Max = 1000 + 5;
+string s, s1 = &quot;XiaoQiao&quot;, s2 = &quot;XiaoHuiHui&quot;;
+int a[100][100];
+int f[Max][Max];
+bool check(string a, string b) {
+    memset(f, 0, sizeof(f));
+    int lena = a.size(), lenb = b.size();
+    for (int i = 0; i &lt; lena; i++) {
+        for (int j = 0; j &lt; lenb; j++) {
+            if(a[i] == b[j])
+                f[i][j] = f[i - 1][j - 1] + 1;
+            else
+                f[i][j] = max(f[i - 1][j], f[i][j - 1]);
+        }
+    }
+    if(f[lena - 1][lenb - 1] == lenb) {
+        return true;
+    }
+    else
+        return false;
+}
+int main() {
+    cin &gt;&gt; s;
+    bool ans1 = check(s, s1);
+    memset(a, 0, sizeof(a));
+    bool ans2 = check(s, s2);
+    if(ans1 &amp;&amp; ans2)
+        puts(&quot;Happy&quot;);
+    else {
+        puts(&quot;emm&quot;);
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="b题-牛能和小镇">B题 牛能和小镇</h2>
+<h2 id="问题描述-2">问题描述</h2>
+<blockquote>
+<p><a href="https://ac.nowcoder.com/acm/contest/4743/B">题目链接</a></p>
+</blockquote>
+<h3 id="一点小想法-2"><em><strong>一点小想法</strong></em></h3>
+<blockquote>
+<p>这道题是一道简单的贪心题。<br>
+题目要我们最后花的总费用尽量小，我们就要尽可能的少连边。在这里补充一个定理：<em><strong>在一个点数大于等于2的图中，要使图中每个点都连通，那么最少需要 n-1 条边。</strong></em><br>
+有了这个结论以后我们就可以开始贪心了。我们自己虚拟一个节点0位置是 <em><strong>(0,0)</strong></em> ,然后再按其他节点到节点0的距离从小到大排序然后再在相邻两个节点之间连一条边即可。</p>
+</blockquote>
+<h3 id="代码-2"><em><strong>代码</strong></em></h3>
+<pre><code class="language-c">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+#define ll long long
+using namespace std;
+const int Max = 1e5 + 5;
+ll v[Max], x, y, n;
+
+int main() {
+    scanf(&quot;%lld&quot;, &amp;n);
+    for (int i = 1; i &lt;= n; i++) {
+        scanf(&quot;%lld %lld&quot;, &amp;x, &amp;y);
+        v[i] = x * x * y + y * y * (y - 2 * x);
+    }
+
+    sort(v + 1, v + n + 1);
+    ll ans = 0;
+    for(int i = 2; i &lt;= n; i++) {
+        ans += v[i] - v[i - 1];
+    }
+    printf(&quot;%lld&quot;, ans);
+    return 0;
+}
+</code></pre>
+<h2 id="c题-装备合成">C题 装备合成</h2>
+<h2 id="问题描述-3">问题描述</h2>
+<blockquote>
+<p><a href="https://ac.nowcoder.com/acm/contest/4743/C">题目链接</a></p>
+</blockquote>
+<h3 id="一点小想法-3"><em><strong>一点小想法</strong></em></h3>
+<blockquote>
+<p>我们可以假设制造了a件1号装备，然后还可以制造的2号装备的数量为 <em><strong>min((x - 2 * a) / 4, (y - 3 * a))</strong></em> 件，再通过打表可以发现总数量是一个单峰函数，即：<em><strong>先是逐渐增大，然后过了某个点后又开始逐渐减小。</strong></em> 这个点就是我们要找的最大值。解决这种单峰函数问题，我们常用的方法是三分法。这里附一篇关于三分法的讲解：<a href="https://blog.csdn.net/caduca/article/details/43526375">三分法</a>。 最后因为有 <em><strong>t</strong></em> 组数据，三分法的复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">logn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>, 总复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">tlogn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>。可以通过。</p>
+</blockquote>
+<h3 id="代码-3"><em><strong>代码</strong></em></h3>
+<pre><code class="language-c">#include &lt;cstdio&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int t, x, y;
+
+int main() {
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--) {
+        scanf(&quot;%d %d&quot;, &amp;x, &amp;y);
+        int Left = 0, Right = min(x / 2, y / 3);
+        while(Right - Left &gt; 100) {
+            int mid1 = Left + (Right - Left) / 3, mid2 = Right - (Right - Left) / 3;
+            if (mid1 + (min((x - 2 * mid1) / 4, y - 3 * mid1)) &gt; mid2 + (min((x - 2 * mid2) / 4, y - 3 * mid2)))
+                Right = mid2;
+            else
+                Left = mid1;
+        }
+        int ans = 0;
+        for (int i = Left; i &lt;= Right; i++) {
+            ans = max(ans, i + min((x - 2 * i) / 4, y - 3 * i));
+        }
+        printf(&quot;%d\n&quot;, ans);
+    }
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[luogu p1021 邮票面值设计]]></title>
         <id>https://kakashisese.github.io/post/luogu-p1021-you-piao-mian-zhi-she-ji/</id>
