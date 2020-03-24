@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://kakashisese.github.io</id>
     <title>用画笔记录生活</title>
-    <updated>2020-03-24T04:32:46.545Z</updated>
+    <updated>2020-03-24T04:36:09.487Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://kakashisese.github.io"/>
     <link rel="self" href="https://kakashisese.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://kakashisese.github.io/images/avatar.png</logo>
     <icon>https://kakashisese.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 用画笔记录生活</rights>
+    <entry>
+        <title type="html"><![CDATA[一张很烂的画]]></title>
+        <id>https://kakashisese.github.io/post/yi-zhang-hen-lan-de-hua/</id>
+        <link href="https://kakashisese.github.io/post/yi-zhang-hen-lan-de-hua/">
+        </link>
+        <updated>2020-03-24T04:33:13.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="上课闲得发慌画了一张脸画完后发现画的"><em><strong>上课闲得发慌，画了一张脸，画完后发现，画的😂。。。</strong></em></h2>
+<figure data-type="image" tabindex="1"><img src="https://kakashisese.github.io/post-images/1585024532882.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[牛客练习赛59做题心得]]></title>
         <id>https://kakashisese.github.io/post/niu-ke-lian-xi-sai-59-zuo-ti-xin-de/</id>
