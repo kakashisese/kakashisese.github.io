@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>「网络流 24 题」搭配飞行员 | 用画笔记录生活</title>
+<title> nkoj 1729 【语法基础】矩阵相乘 | 用画笔记录生活</title>
 <meta name="description" content="艺术就是生命">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -87,84 +87,103 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>「网络流 24 题」搭配飞行员</h1>
+            <h1> nkoj 1729 【语法基础】矩阵相乘</h1>
             <p class="article-meta">
-              2020-03-22
+              2020-03-25
               
-                <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge warning">
+                <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge secondary">
                   程序竞赛
                 </a>
               
             </p>
             
             <div class="post-content">
-              <h1 id="网络流-24-题搭配飞行员"><em><strong>「网络流 24 题」搭配飞行员</strong></em></h1>
+              <h1 id="nkoj-1729-语法基础矩阵相乘">nkoj 1729 【语法基础】矩阵相乘</h1>
 <h2 id="问题描述">问题描述</h2>
 <blockquote>
-<p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员，需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。<br>
-因为驾驶工作分工严格，两个正驾驶员或两个副驾驶员都不能同机飞行。</p>
+<pre><code>一个m行w列的矩阵 与 一个w行n列的矩阵相乘，得到的将是一个新的m行n列的矩阵。
+乘法过程：C[i][j]=A[i][1]*B[1][j]+A[i][2]*B[2][j]+...+A[i][w]*B[w][j]
+例如
+矩阵A=
+6  5
+7  1
+4  6 
+9  4 
+矩阵B= 
+8  1  9
+1  6  0
+   
+      矩阵C=A*B
+      A*B=
+          53  36  54
+          57  13  63
+          38  40  36
+          76  33  81
+     如：C[3][2]= A[3][1]*B[1][2]+A[3][2]*B[2][2]=4*1+6*6=40
+</code></pre>
 </blockquote>
 <h2 id="输入格式">输入格式</h2>
 <blockquote>
-<p>第一行，两个整数 n与 m，表示共有 n个飞行员，其中有 m名飞行员是正驾驶员。<br>
-下面有若干行，每行有 2个数字 a、b。表示正驾驶员 a和副驾驶员 b可以同机飞行。<br>
-注：正驾驶员的编号在前，即正驾驶员的编号小于副驾驶员的编号。</p>
+<p>三个整数 m,w,n 代表一个m行w列的矩阵和一个w行n列的矩阵（1&lt;=m,w,n&lt;=50）<br>
+接下来是表示两个矩阵的数字，每个数字不超过1000</p>
 </blockquote>
 <h2 id="输出格式">输出格式</h2>
 <blockquote>
-<p>仅一行一个整数，表示最大起飞的飞机数。</p>
+<p>一个矩阵，表示相乘的结果</p>
 </blockquote>
 <h2 id="样例输入">样例输入</h2>
 <blockquote>
-<p>10 5<br>
-1 7<br>
-2 6<br>
-2 10<br>
-3 7<br>
-4 8<br>
-5 9</p>
+<p>4 2 3<br>
+6 5<br>
+7 1<br>
+4 6<br>
+9 4<br>
+8 1 9<br>
+1 6 0</p>
 </blockquote>
 <h2 id="样例输出">样例输出</h2>
 <blockquote>
-<p>4</p>
+<p>53 36 54<br>
+57 13 63<br>
+38 40 36<br>
+76 33 81</p>
 </blockquote>
 <h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
 <blockquote>
-<p>这是一道二分图匹配问题。<br>
-建图思路就是 <em><strong>给可以一起驾驶飞机的正驾驶员和副驾驶员连一条边，即：给每次输入的a和b连边。</strong></em> 连完后跑一遍二分图匈牙利算法求出最大匹配即可。</p>
+<p>这是一道关于矩阵乘法的模板题。</p>
+<p>关于矩阵乘法，如果不了解的话可以看一下这篇<a href="https://blog.csdn.net/FnqTyr45/article/details/90090970">博客</a>,主要就是 <em><strong>A</strong></em> 矩阵的第 <em><strong>i</strong></em> 行与 <em><strong>B</strong></em> 矩阵的第 <em><strong>j</strong></em> 列相乘得到答案矩阵的第 <em><strong>(i,j)</strong></em> 个数。</p>
 </blockquote>
 <h3 id="代码"><em><strong>代码</strong></em></h3>
 <pre><code class="language-c">#include &lt;cstdio&gt;
 #include &lt;algorithm&gt;
-#include &lt;vector&gt;
+#define ll long long
 using namespace std;
-const int Max = 100 + 5;
-vector&lt;int&gt; g[Max];
-int n, m, vis[Max], lin[Max], I;
-int xyl(int x) { //匈牙利算法
-    for (int i = 0; i &lt; g[x].size(); i++) {
-        int v = g[x][i];
-        if(vis[v] != I) {
-            vis[v] = I;
-            if(!lin[v] || xyl(lin[v])) {
-                lin[v] = x;
-                return 1;
-            }
-        }
-    }
-    return 0;
-}
+const int Max = 50 + 5;
+ll m, w, n, ga[Max][Max], gb[Max][Max], g[Max][Max];
 
 int main() {
-    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
-    int a, b;
-    while(scanf(&quot;%d %d&quot;, &amp;a, &amp;b) == 2) { //读入
-        g[a].push_back(b); //连边
+    scanf(&quot;%lld %lld %lld&quot;, &amp;m, &amp;w, &amp;n);
+    for (int i = 1; i &lt;= m; i++)
+        for (int j = 1; j &lt;= w; j++)
+            scanf(&quot;%lld&quot;, &amp;ga[i][j]);
+    for (int i = 1; i &lt;= w; i++)
+        for (int j = 1; j &lt;= n; j++)
+            scanf(&quot;%lld&quot;, &amp;gb[i][j]);
+    for (int i = 1; i &lt;= n; i++) { //矩阵乘法
+        for (int j = 1; j &lt;= m; j++) {
+            int p = 0;
+            for (int k = 1; k &lt;= w; k++) {
+                p += ga[j][k] * gb[k][i];
+            }
+            g[j][i] = p;
+        }
     }
-    int ans = 0;
-    for (I = 1; I &lt;= m; I++) //求最大匹配
-        ans += xyl(I);
-    printf(&quot;%d&quot;, ans);
+    for (int i = 1; i &lt;= m; i++) {
+        for (int j = 1; j &lt;= n; j++) {
+            printf(&quot;%d &quot;, g[i][j]);
+        }
+        puts(&quot;&quot;); //换行
+    }
     return 0;
 }
 </code></pre>
@@ -178,9 +197,9 @@ int main() {
               <div class="next">
                 下一篇
               </div>
-              <a href="https://kakashisese.github.io/post/hello-gridea/">
+              <a href="https://kakashisese.github.io/post/yi-zhang-hen-lan-de-hua/">
                 <h3 class="post-title">
-                  Hello Gridea
+                  一张很烂的画
                 </h3>
               </a>
             </div>
@@ -285,15 +304,15 @@ int main() {
     </div>
     <div class="row">
       
-        <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge warning">
+        <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge secondary">
           程序竞赛
         </a>
       
-        <a href="https://kakashisese.github.io/tag/C_U3gcTly/" class="badge secondary">
+        <a href="https://kakashisese.github.io/tag/C_U3gcTly/" class="badge ">
           漫画Comic
         </a>
       
-        <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge warning">
+        <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge secondary">
           Gridea
         </a>
       
