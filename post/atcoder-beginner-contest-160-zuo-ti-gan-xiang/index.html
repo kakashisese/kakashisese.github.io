@@ -1,22 +1,104 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://kakashisese.github.io</id>
-    <title>用画笔记录生活</title>
-    <updated>2020-03-29T03:42:51.664Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://kakashisese.github.io"/>
-    <link rel="self" href="https://kakashisese.github.io/atom.xml"/>
-    <subtitle>艺术就是生命</subtitle>
-    <logo>https://kakashisese.github.io/images/avatar.png</logo>
-    <icon>https://kakashisese.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 用画笔记录生活</rights>
-    <entry>
-        <title type="html"><![CDATA[AtCoder Beginner Contest 160 做题感想]]></title>
-        <id>https://kakashisese.github.io/post/atcoder-beginner-contest-160-zuo-ti-gan-xiang/</id>
-        <link href="https://kakashisese.github.io/post/atcoder-beginner-contest-160-zuo-ti-gan-xiang/">
-        </link>
-        <updated>2020-03-29T03:41:50.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="atcoder-beginner-contest-160-做题感想"><em><strong>AtCoder Beginner Contest 160 做题感想</strong></em></h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>AtCoder Beginner Contest 160 做题感想 | 用画笔记录生活</title>
+<meta name="description" content="艺术就是生命">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="https://kakashisese.github.io/favicon.ico?v=1585453366839">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://kakashisese.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+  
+    <nav class="navbar border fixed split-nav">
+  <div class="nav-brand">
+    <h3><a href="https://kakashisese.github.io">用画笔记录生活</a></h3>
+  </div>
+  <div class="collapsible">
+    <input id="collapsible1" type="checkbox" name="collapsible1">
+    <button>
+      <label for="collapsible1">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </label>
+    </button>
+    <div class="collapsible-body">
+      <ul class="inline">
+        
+          <li>
+            
+              <a href="/" class="menu">
+                首页
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="https://kakashisese.github.io/archives" class="menu">
+                归档
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/tags" class="menu">
+                标签
+              </a>
+            
+          </li>
+        
+          <li>
+            
+              <a href="/post/about" class="menu">
+                关于
+              </a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div id="top" class="row site">
+      <div class="sm-12 md-8 col">
+        <div class="paper">
+          <article class="article">
+            <h1>AtCoder Beginner Contest 160 做题感想</h1>
+            <p class="article-meta">
+              2020-03-29
+              
+                <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge secondary">
+                  程序竞赛
+                </a>
+              
+            </p>
+            
+            <div class="post-content">
+              <h1 id="atcoder-beginner-contest-160-做题感想"><em><strong>AtCoder Beginner Contest 160 做题感想</strong></em></h1>
 <blockquote>
 <p><a href="https://kakashisese.github.io/">这是</a>我的博客，有兴趣的可以参观一下。</p>
 </blockquote>
@@ -370,636 +452,186 @@ int main() {
 }
 
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[ nkoj 1729 【语法基础】矩阵相乘]]></title>
-        <id>https://kakashisese.github.io/post/nkoj-1729-yu-fa-ji-chu-ju-zhen-xiang-cheng/</id>
-        <link href="https://kakashisese.github.io/post/nkoj-1729-yu-fa-ji-chu-ju-zhen-xiang-cheng/">
-        </link>
-        <updated>2020-03-25T09:10:47.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="nkoj-1729-语法基础矩阵相乘">nkoj 1729 【语法基础】矩阵相乘</h1>
-<h2 id="问题描述">问题描述</h2>
-<blockquote>
-<pre><code>一个m行w列的矩阵 与 一个w行n列的矩阵相乘，得到的将是一个新的m行n列的矩阵。
-乘法过程：C[i][j]=A[i][1]*B[1][j]+A[i][2]*B[2][j]+...+A[i][w]*B[w][j]
-例如
-矩阵A=
-6  5
-7  1
-4  6 
-9  4 
-矩阵B= 
-8  1  9
-1  6  0
-   
-      矩阵C=A*B
-      A*B=
-          53  36  54
-          57  13  63
-          38  40  36
-          76  33  81
-     如：C[3][2]= A[3][1]*B[1][2]+A[3][2]*B[2][2]=4*1+6*6=40
-</code></pre>
-</blockquote>
-<h2 id="输入格式">输入格式</h2>
-<blockquote>
-<p>三个整数 m,w,n 代表一个m行w列的矩阵和一个w行n列的矩阵（1&lt;=m,w,n&lt;=50）<br>
-接下来是表示两个矩阵的数字，每个数字不超过1000</p>
-</blockquote>
-<h2 id="输出格式">输出格式</h2>
-<blockquote>
-<p>一个矩阵，表示相乘的结果</p>
-</blockquote>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>4 2 3<br>
-6 5<br>
-7 1<br>
-4 6<br>
-9 4<br>
-8 1 9<br>
-1 6 0</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>53 36 54<br>
-57 13 63<br>
-38 40 36<br>
-76 33 81</p>
-</blockquote>
-<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>这是一道关于矩阵乘法的模板题。</p>
-<p>关于矩阵乘法，如果不了解的话可以看一下这篇<a href="https://blog.csdn.net/FnqTyr45/article/details/90090970">博客</a>,主要就是 <em><strong>A</strong></em> 矩阵的第 <em><strong>i</strong></em> 行与 <em><strong>B</strong></em> 矩阵的第 <em><strong>j</strong></em> 列相乘得到答案矩阵的第 <em><strong>(i,j)</strong></em> 个数。</p>
-</blockquote>
-<h3 id="代码"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#define ll long long
-using namespace std;
-const int Max = 50 + 5;
-ll m, w, n, ga[Max][Max], gb[Max][Max], g[Max][Max];
 
-int main() {
-    scanf(&quot;%lld %lld %lld&quot;, &amp;m, &amp;w, &amp;n);
-    for (int i = 1; i &lt;= m; i++)
-        for (int j = 1; j &lt;= w; j++)
-            scanf(&quot;%lld&quot;, &amp;ga[i][j]);
-    for (int i = 1; i &lt;= w; i++)
-        for (int j = 1; j &lt;= n; j++)
-            scanf(&quot;%lld&quot;, &amp;gb[i][j]);
-    for (int i = 1; i &lt;= n; i++) { //矩阵乘法
-        for (int j = 1; j &lt;= m; j++) {
-            int p = 0;
-            for (int k = 1; k &lt;= w; k++) {
-                p += ga[j][k] * gb[k][i];
-            }
-            g[j][i] = p;
-        }
-    }
-    for (int i = 1; i &lt;= m; i++) {
-        for (int j = 1; j &lt;= n; j++) {
-            printf(&quot;%d &quot;, g[i][j]);
-        }
-        puts(&quot;&quot;); //换行
-    }
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[一张很烂的画]]></title>
-        <id>https://kakashisese.github.io/post/yi-zhang-hen-lan-de-hua/</id>
-        <link href="https://kakashisese.github.io/post/yi-zhang-hen-lan-de-hua/">
-        </link>
-        <updated>2020-03-24T04:33:13.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="上课闲得发慌画了一张脸画完后发现画的"><em><strong>上课闲得发慌，画了一张脸，画完后发现，画的😂。。。</strong></em></h2>
-<figure data-type="image" tabindex="1"><img src="https://kakashisese.github.io/post-images/1585024532882.jpg" alt="" loading="lazy"></figure>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[牛客练习赛59做题心得]]></title>
-        <id>https://kakashisese.github.io/post/niu-ke-lian-xi-sai-59-zuo-ti-xin-de/</id>
-        <link href="https://kakashisese.github.io/post/niu-ke-lian-xi-sai-59-zuo-ti-xin-de/">
-        </link>
-        <updated>2020-03-23T01:10:14.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="牛客练习赛59做题心得">牛客练习赛59做题心得</h1>
-<h2 id="a题-小乔和小灰灰">A题 小乔和小灰灰</h2>
-<h2 id="问题描述">问题描述</h2>
-<blockquote>
-<p><a href="https://ac.nowcoder.com/acm/contest/4743/A">题目链接</a></p>
-</blockquote>
-<h2 id="一点小想法"><em><strong>一点小想法</strong></em></h2>
-<blockquote>
-<p>这道题有很多种做法，我在这里采用的是动态规划的方法。<br>
-我们可以让原字符串和 <em><strong>XiaoQiao</strong></em>， <em><strong>XiaoHuiHui</strong></em> 两个字符串分别跑最长公共子序列，如果最长公共子序列等于字符串的长度就说明原字符串中包含这个字符串。<br>
-最后如果两个都包含，那么就输出 <em><strong>Happy</strong></em>。</p>
-</blockquote>
-<h3 id="代码"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int Max = 1000 + 5;
-string s, s1 = &quot;XiaoQiao&quot;, s2 = &quot;XiaoHuiHui&quot;;
-int a[100][100];
-int f[Max][Max];
-bool check(string a, string b) {
-    memset(f, 0, sizeof(f));
-    int lena = a.size(), lenb = b.size();
-    for (int i = 0; i &lt; lena; i++) {
-        for (int j = 0; j &lt; lenb; j++) {
-            if(a[i] == b[j])
-                f[i][j] = f[i - 1][j - 1] + 1;
-            else
-                f[i][j] = max(f[i - 1][j], f[i][j - 1]);
-        }
-    }
-    if(f[lena - 1][lenb - 1] == lenb) {
-        return true;
-    }
-    else
-        return false;
-}
-int main() {
-    cin &gt;&gt; s;
-    bool ans1 = check(s, s1);
-    memset(a, 0, sizeof(a));
-    bool ans2 = check(s, s2);
-    if(ans1 &amp;&amp; ans2)
-        puts(&quot;Happy&quot;);
-    else {
-        puts(&quot;emm&quot;);
-    }
-    return 0;
-}
-</code></pre>
-<h2 id="b题-牛能和小镇">B题 牛能和小镇</h2>
-<h2 id="问题描述-2">问题描述</h2>
-<blockquote>
-<p><a href="https://ac.nowcoder.com/acm/contest/4743/B">题目链接</a></p>
-</blockquote>
-<h3 id="一点小想法-2"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>这道题是一道简单的贪心题。<br>
-题目要我们最后花的总费用尽量小，我们就要尽可能的少连边。在这里补充一个定理：<em><strong>在一个点数大于等于2的图中，要使图中每个点都连通，那么最少需要 n-1 条边。</strong></em><br>
-有了这个结论以后我们就可以开始贪心了。我们自己虚拟一个节点0位置是 <em><strong>(0,0)</strong></em> ,然后再按其他节点到节点0的距离从小到大排序然后再在相邻两个节点之间连一条边即可。</p>
-</blockquote>
-<h3 id="代码-2"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#define ll long long
-using namespace std;
-const int Max = 1e5 + 5;
-ll v[Max], x, y, n;
+            </div>
+          </article>
+        </div>
+        <div class="paper" data-aos="fade-in">
+          
+            <div class="next-post">
+              <div class="next">
+                下一篇
+              </div>
+              <a href="https://kakashisese.github.io/post/nkoj-1729-yu-fa-ji-chu-ju-zhen-xiang-cheng/">
+                <h3 class="post-title">
+                   nkoj 1729 【语法基础】矩阵相乘
+                </h3>
+              </a>
+            </div>
+          
+        </div>
+        
+          
+            <div class="paper" data-aos="fade-in">
+              <div id="gitalk-container"></div>
+            </div>
+          
 
-int main() {
-    scanf(&quot;%lld&quot;, &amp;n);
-    for (int i = 1; i &lt;= n; i++) {
-        scanf(&quot;%lld %lld&quot;, &amp;x, &amp;y);
-        v[i] = x * x * y + y * y * (y - 2 * x);
-    }
+          
+        
+      </div>
 
-    sort(v + 1, v + n + 1);
-    ll ans = 0;
-    for(int i = 2; i &lt;= n; i++) {
-        ans += v[i] - v[i - 1];
-    }
-    printf(&quot;%lld&quot;, ans);
-    return 0;
-}
-</code></pre>
-<h2 id="c题-装备合成">C题 装备合成</h2>
-<h2 id="问题描述-3">问题描述</h2>
-<blockquote>
-<p><a href="https://ac.nowcoder.com/acm/contest/4743/C">题目链接</a></p>
-</blockquote>
-<h3 id="一点小想法-3"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>我们可以假设制造了a件1号装备，然后还可以制造的2号装备的数量为 <em><strong>min((x - 2 * a) / 4, (y - 3 * a))</strong></em> 件，再通过打表可以发现总数量是一个单峰函数，即：<em><strong>先是逐渐增大，然后过了某个点后又开始逐渐减小。</strong></em> 这个点就是我们要找的最大值。解决这种单峰函数问题，我们常用的方法是三分法。这里附一篇关于三分法的讲解：<a href="https://blog.csdn.net/caduca/article/details/43526375">三分法</a>。 最后因为有 <em><strong>t</strong></em> 组数据，三分法的复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">logn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>, 总复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">tlogn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>。可以通过。</p>
-</blockquote>
-<h3 id="代码-3"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-int t, x, y;
+      <div class="sm-12 md-4 col sidebar">
+  <div class="paper info-container">
+    <img src="https://kakashisese.github.io/images/avatar.png?v=1585453366839" class="no-responsive avatar">
+    <div class="text-muted">艺术就是生命</div>
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      最新文章
+    </div>
+    <div class="row">
+      <ul>
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/atcoder-beginner-contest-160-zuo-ti-gan-xiang/">AtCoder Beginner Contest 160 做题感想</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/nkoj-1729-yu-fa-ji-chu-ju-zhen-xiang-cheng/"> nkoj 1729 【语法基础】矩阵相乘</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/yi-zhang-hen-lan-de-hua/">一张很烂的画</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/niu-ke-lian-xi-sai-59-zuo-ti-xin-de/">牛客练习赛59做题心得</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/luogu-p1021-you-piao-mian-zhi-she-ji/">luogu p1021 邮票面值设计</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/nkoj-p3000-nodgd-zao-shui-ti-song-song/">nkoj p3000 【nodgd造水题】嵩嵩</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/lougu-p1168-zhong-wei-shu/">lougu P1168 中位数</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/wang-luo-liu-24-ti-da-pei-fei-xing-yuan/">「网络流 24 题」搭配飞行员</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/about/">关于</a>
+            </li>
+          
+        
+          
+            <li>
+              <a href="https://kakashisese.github.io/post/hello-gridea/">Hello Gridea</a>
+            </li>
+          
+        
+      </ul>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="sidebar-title">
+      标签列表
+    </div>
+    <div class="row">
+      
+        <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge secondary">
+          程序竞赛
+        </a>
+      
+        <a href="https://kakashisese.github.io/tag/C_U3gcTly/" class="badge secondary">
+          漫画Comic
+        </a>
+      
+        <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge success">
+          Gridea
+        </a>
+      
+    </div>
+  </div>
+  <div class="paper">
+    Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://kakashisese.github.io/atom.xml" target="_blank">RSS</a>
+  </div>
+</div>
 
-int main() {
-    scanf(&quot;%d&quot;, &amp;t);
-    while(t--) {
-        scanf(&quot;%d %d&quot;, &amp;x, &amp;y);
-        int Left = 0, Right = min(x / 2, y / 3);
-        while(Right - Left &gt; 100) {
-            int mid1 = Left + (Right - Left) / 3, mid2 = Right - (Right - Left) / 3;
-            if (mid1 + (min((x - 2 * mid1) / 4, y - 3 * mid1)) &gt; mid2 + (min((x - 2 * mid2) / 4, y - 3 * mid2)))
-                Right = mid2;
-            else
-                Left = mid1;
-        }
-        int ans = 0;
-        for (int i = Left; i &lt;= Right; i++) {
-            ans = max(ans, i + min((x - 2 * i) / 4, y - 3 * i));
-        }
-        printf(&quot;%d\n&quot;, ans);
-    }
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[luogu p1021 邮票面值设计]]></title>
-        <id>https://kakashisese.github.io/post/luogu-p1021-you-piao-mian-zhi-she-ji/</id>
-        <link href="https://kakashisese.github.io/post/luogu-p1021-you-piao-mian-zhi-she-ji/">
-        </link>
-        <updated>2020-03-22T09:41:31.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="luogu-p1021-邮票面值设计"><em><strong>luogu p1021 邮票面值设计</strong></em></h1>
-<h2 id="题目描述">题目描述</h2>
-<blockquote>
-<p>给定一个信封，最多只允许粘贴N张邮票，计算在给定K（N+K≤15）种邮票的情况下（假定所有的邮票数量都足够），如何设计邮票的面值，能得到最大值MAX，使在1至MAX之间的每一个邮资值都能得到。<br>
-例如，N=3，K=2，如果面值分别为1分、4分，则在1分～6分之间的每一个邮资值都能得到（当然还有8分、9分和12分）；如果面值分别为1分、3分，则在1分～7分之间的每一个邮资值都能得到。可以验证当N=3，K=2时，7分就是可以得到的连续的邮资最大值，所以MAX=7，面值分别为1分、3分</p>
-</blockquote>
-<h2 id="输入格式">输入格式</h2>
-<blockquote>
-<p>2个整数，代表N，K。</p>
-</blockquote>
-<h2 id="输出格式">输出格式</h2>
-<blockquote>
-<p>2行。第一行若干个数字，表示选择的面值，从小到大排序。<br>
-第二行，输出“MAX=S”，S表示最大的面值。</p>
-</blockquote>
-<h2 id="输入样例">输入样例</h2>
-<blockquote>
-<p>3 2</p>
-</blockquote>
-<h2 id="输出样例">输出样例</h2>
-<blockquote>
-<p>1 3<br>
-MAX=7</p>
-</blockquote>
-<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>本题可分为两部分。<br>
-一是求在规定的 <em><strong>k</strong></em> 值中找到最大值 <em><strong>S</strong></em> 此部分可以套用完全背包模型，具体转移方程 <em><strong>f[j] = min(f[j], f[j - a[i]] + 1)</strong></em> 。<br>
-第二部分是找到所有情况中的最大值 <em><strong>S</strong></em> 我们可以采用dfs搜索，每次数量达到 <em><strong>k</strong></em> 时就更新一下 <em><strong>S</strong></em> 的值，反之继续搜索。<br>
-最终用一个 <em><strong>ans</strong></em> 数组保存答案即可。</p>
-</blockquote>
-<h3 id="代码"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#define inf 0x3f3f3f3f
-using namespace std;
-const int Max = 1e5 + 5;
-int a[Max], ans[Max], n, k, f[Max];
-int dp(int t) {
-    f[0] = 0;
-    for (int i = 1; i &lt;= a[t] * n; i++)
-        f[i] = inf; //由于要求最小的数量，所以赋值为最大值
-    for (int i = 1; i &lt;= t; i++) {
-        for (int j = a[i]; j &lt;= a[t] * n; j++)
-            f[j] = min(f[j], f[j - a[i]] + 1); //完全背包转移方程
-    }
-    for (int i = 1; i &lt;= a[t] * n; i++) {
-        if(f[i] &gt; n)
-            return i - 1; //如果大于n说明不行，只能返回上一个数
-    }
-    return a[t] * n; //否则返回最大值
-}
-int maxn = -1;
-void dfs(int t, int mx) {
-    if(t == k + 1) {
-        if(mx &gt; maxn) { //更新最大值
-            maxn = mx;
-            for (int i = 1; i &lt; t; i++)
-                ans[i] = a[i]; //存答案
-        }
-        return;
-    }
-    for (int i = a[t - 1] + 1; i &lt;= mx + 1; i++) { //继续搜索
-        a[t] = i;
-        int x = dp(t);
-        dfs(t + 1, x);
-    }
-}
 
-int main() {
-    scanf(&quot;%d %d&quot;, &amp;n, &amp;k);
-    dfs(1, 0);
-    for (int i = 1; i &lt;= k; i++)
-        printf(&quot;%d &quot;, ans[i]);
-    puts(&quot;&quot;);
-    printf(&quot;MAX=%d&quot;, maxn);
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[nkoj p3000 【nodgd造水题】嵩嵩]]></title>
-        <id>https://kakashisese.github.io/post/nkoj-p3000-nodgd-zao-shui-ti-song-song/</id>
-        <link href="https://kakashisese.github.io/post/nkoj-p3000-nodgd-zao-shui-ti-song-song/">
-        </link>
-        <updated>2020-03-22T09:40:45.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="nkoj-p3000-nodgd造水题嵩嵩">nkoj p3000 【nodgd造水题】嵩嵩</h1>
-<h2 id="问题描述">问题描述</h2>
-<blockquote>
-<p>受何老板之托，嵩嵩在美国为何老板采购的若干吨货物。这批货物已通过水路运送到了我国某沿海城市，现在需要通过公路将这些货物运送到何老板家。嵩嵩的地图上有N(2 &lt;= N &lt;= 200) 座城市，编号1到N，嵩嵩在1号城市，何老板的家在N号城市。这N座城市间有P(1 &lt;= P &lt;= 40,000) 条双向通行的道路相连，每条道路长度不超过1,000,000。两座城市间可能有多条道路相连。<br>
-嵩嵩雇了T(1 &lt;= T &lt;= 200)辆卡车运送这批货物。为了避免被人发现或引起别人的注意，嵩嵩安排这T辆车选择不同的道路行驶，也就是同一条道路不会被走两次。<br>
-请帮助嵩嵩安排这T辆车的线路，使得走过的总长度尽量短。<br>
-嵩嵩向你保证在不走重复道路的情况下，一定能够把T车货物运到目的地。<br>
-注意：题目中描述的“道路”相当于图论中的“边”。<br>
-注：题目改编自NKOJ1605。其实是nodgd做1605的时候一开始读错题了，但是既然代码都写好了，总不能浪费了吧，所以就有了这道题！</p>
-</blockquote>
-<h2 id="输入格式">输入格式</h2>
-<blockquote>
-<p>第一行包括三个空格间隔的整数N,P,T。<br>
-接下来P行，每行有三个空格间隔的整数A,B,C。表示城市A、B间有条长度为C的道路。</p>
-</blockquote>
-<h2 id="输出格式">输出格式</h2>
-<blockquote>
-<p>一整数，表示经过的道路总长度的最小值。</p>
-</blockquote>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>7 9 2<br>
-1 2 2<br>
-2 3 5<br>
-3 7 5<br>
-1 4 1<br>
-4 3 1<br>
-4 5 7<br>
-5 7 1<br>
-1 6 3<br>
-6 7 3</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>13</p>
-</blockquote>
-<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>费用流模板题，把 <em><strong>1</strong></em> 看成原点 <em><strong>n</strong></em> 看成汇点，每条路的费用就是它的长度，每条路的容量为 <em><strong>1</strong></em>。<br>
-只需要注意一点就是只有 <em><strong>t</strong></em> 辆货车，所以当最大流达到 <em><strong>t</strong></em> 时退出找增广路，输出此时的最小费用。</p>
-</blockquote>
-<h3 id="代码"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#include &lt;queue&gt;
-#include &lt;cstring&gt;
-using namespace std;
-const int Max = (40000 + 5) &lt;&lt; 3;
-int Last[Max];
-struct Eg {
-    int Next, Child, Cost, Cap;
-} egs[Max];
-int n, p, t;
-void addegs(int num, int fr, int to, int c, int v) {
-    egs[num].Child = to;
-    egs[num].Cap = c;
-    egs[num].Cost = v;
-    egs[num].Next = Last[fr];
-    Last[fr] = num;
-}
-int dis[Max], maxflow, mincost, flow[Max], pre[Max], head[Max];
-bool vis[Max];
-queue&lt;int&gt; q;
-bool spfa(int s, int t) {
-    memset(dis, 127 / 2, sizeof(dis));
-    memset(flow, 127 / 2, sizeof(flow));
-    q.push(s);
-    dis[s] = 0;
-    vis[s] = true;
-    pre[t] = -1;
-    while(q.size()) {
-        int u = q.front();
-        q.pop();
-        vis[u] = false;
-        for (int i = Last[u]; i; i = egs[i].Next) {
-            int v = egs[i].Child;
-            if(egs[i].Cap &amp;&amp; dis[v] &gt; dis[u] + egs[i].Cost) {
-                dis[v] = dis[u] + egs[i].Cost;
-                pre[v] = u;
-                head[v] = i;
-                flow[v] = min(flow[u], egs[i].Cap);
-                if(!vis[v]) {
-                    vis[v] = true;
-                    q.push(v);
-                }
-            }
-        }
-    }
-    return pre[t] != -1;
-}
-int s, T;
-void mcmf() {
-    while(spfa(1, T) &amp;&amp; maxflow &lt; t) {
-        int u = T;
-        maxflow += flow[T];
-        mincost += flow[T] * dis[T];
-        while(u != s) {
-            egs[head[u]].Cap -= flow[T];
-            egs[head[u] ^ 1].Cap += flow[T];
-            u = pre[u];
-        }
-    }
-}
+    </div>
 
-int main() {
-    scanf(&quot;%d %d %d&quot;, &amp;n, &amp;p, &amp;t);
-    int num = 2;
-    for(int i = 1; i &lt;= p; i++) {
-        int fr, to, c;
-        scanf(&quot;%d %d %d&quot;, &amp;fr, &amp;to, &amp;c);
-        addegs(num++, fr, to, 1, c);
-        addegs(num++, to, fr, 0, -c);
-        addegs(num++, to, fr, 1, c);
-        addegs(num++, fr, to, 0, -c);
-    }
-    s = 1;
-    T = n;
-    mcmf();
-    printf(&quot;%d&quot;, mincost);
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[lougu P1168 中位数]]></title>
-        <id>https://kakashisese.github.io/post/lougu-p1168-zhong-wei-shu/</id>
-        <link href="https://kakashisese.github.io/post/lougu-p1168-zhong-wei-shu/">
-        </link>
-        <updated>2020-03-22T09:37:42.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="lougu-p1168-中位数"><em><strong>lougu P1168 中位数</strong></em></h1>
-<h2 id="问题描述">问题描述</h2>
-<blockquote>
-<p>给出一个长度为N的非负整数序列<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，对于所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mo>(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1≤k≤(N + 1)/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.78041em;vertical-align:-0.13597em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span></span></span></span>，输出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">A_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, …, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mrow><mn>2</mn><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">A_{2k - 1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.891661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span> 的中位数。即前1,3,5个数的中位数。</p>
-</blockquote>
-<h2 id="输入格式">输入格式</h2>
-<blockquote>
-<p>第1行为一个正整数N，表示了序列长度。<br>
-第2行包含N个非负整数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> ≤ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup></mrow><annotation encoding="application/x-tex">10^9</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span></span></span>)。</p>
-</blockquote>
-<h2 id="输出格式">输出格式</h2>
-<blockquote>
-<p>共<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>N</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">(N + 1)/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span></span></span></span>行，第i行为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">A_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">A_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, …, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mrow><mn>2</mn><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">A_{2k - 1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.891661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathdefault">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span></span></span></span>的中位数。</p>
-</blockquote>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>7<br>
-1 3 5 7 9 11 6</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>1<br>
-3<br>
-5<br>
-6</p>
-</blockquote>
-<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>关于这道题我想介绍一种 <em><strong>vector</strong></em> 的使用方法，他的主要功效就是维护 <em><strong>vector</strong></em> 里元素的单调性。<br>
-这种方法需要用到二分查找里的 <em><strong>upper_bound</strong></em> , 不明白这个用法的点<a href="https://blog.csdn.net/Fire_to_cheat_/article/details/77113364">这里</a>。我们只需要在插入元素前二分出这个元素该插入的的位置，然后再用 <em><strong>insert</strong></em> 插入即可。<br>
-最后 <em><strong>vector</strong></em> 中间的元素就是答案。<br>
-如果有喜欢我的题解的朋友可以关注我的<a href="https://kakashisese.github.io">博客</a></p>
-</blockquote>
-<h3 id="代码"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#include &lt;queue&gt;
-#include &lt;cmath&gt;
-#include &lt;vector&gt;
-using namespace std;
-const int Max = 100000 + 5;
-int n, a[Max];
-vector&lt;int&gt; ve;
-int main() {
-    scanf(&quot;%d&quot;, &amp;n);
-    for (int i = 1; i &lt;= n; i++)
-        scanf(&quot;%d&quot;, &amp;a[i]);
-    for (int i = 1; i &lt;= n; i++) {
-        ve.insert(upper_bound(ve.begin(), ve.end(), a[i]), a[i]); //将元素插入指定位置
-        if(i % 2) {
-            printf(&quot;%d\n&quot;, ve[i / 2]);
-        }
-    }
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[「网络流 24 题」搭配飞行员]]></title>
-        <id>https://kakashisese.github.io/post/wang-luo-liu-24-ti-da-pei-fei-xing-yuan/</id>
-        <link href="https://kakashisese.github.io/post/wang-luo-liu-24-ti-da-pei-fei-xing-yuan/">
-        </link>
-        <updated>2020-03-22T08:29:07.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="网络流-24-题搭配飞行员"><em><strong>「网络流 24 题」搭配飞行员</strong></em></h1>
-<h2 id="问题描述">问题描述</h2>
-<blockquote>
-<p>飞行大队有若干个来自各地的驾驶员，专门驾驶一种型号的飞机，这种飞机每架有两个驾驶员，需一个正驾驶员和一个副驾驶员。由于种种原因，例如相互配合的问题，有些驾驶员不能在同一架飞机上飞行，问如何搭配驾驶员才能使出航的飞机最多。<br>
-因为驾驶工作分工严格，两个正驾驶员或两个副驾驶员都不能同机飞行。</p>
-</blockquote>
-<h2 id="输入格式">输入格式</h2>
-<blockquote>
-<p>第一行，两个整数 n与 m，表示共有 n个飞行员，其中有 m名飞行员是正驾驶员。<br>
-下面有若干行，每行有 2个数字 a、b。表示正驾驶员 a和副驾驶员 b可以同机飞行。<br>
-注：正驾驶员的编号在前，即正驾驶员的编号小于副驾驶员的编号。</p>
-</blockquote>
-<h2 id="输出格式">输出格式</h2>
-<blockquote>
-<p>仅一行一个整数，表示最大起飞的飞机数。</p>
-</blockquote>
-<h2 id="样例输入">样例输入</h2>
-<blockquote>
-<p>10 5<br>
-1 7<br>
-2 6<br>
-2 10<br>
-3 7<br>
-4 8<br>
-5 9</p>
-</blockquote>
-<h2 id="样例输出">样例输出</h2>
-<blockquote>
-<p>4</p>
-</blockquote>
-<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>这是一道二分图匹配问题。<br>
-建图思路就是 <em><strong>给可以一起驾驶飞机的正驾驶员和副驾驶员连一条边，即：给每次输入的a和b连边。</strong></em> 连完后跑一遍二分图匈牙利算法求出最大匹配即可。</p>
-</blockquote>
-<h3 id="代码"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#include &lt;vector&gt;
-using namespace std;
-const int Max = 100 + 5;
-vector&lt;int&gt; g[Max];
-int n, m, vis[Max], lin[Max], I;
-int xyl(int x) { //匈牙利算法
-    for (int i = 0; i &lt; g[x].size(); i++) {
-        int v = g[x][i];
-        if(vis[v] != I) {
-            vis[v] = I;
-            if(!lin[v] || xyl(lin[v])) {
-                lin[v] = x;
-                return 1;
-            }
-        }
-    }
-    return 0;
-}
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-int main() {
-    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
-    int a, b;
-    while(scanf(&quot;%d %d&quot;, &amp;a, &amp;b) == 2) { //读入
-        g[a].push_back(b); //连边
-    }
-    int ans = 0;
-    for (I = 1; I &lt;= m; I++) //求最大匹配
-        ans += xyl(I);
-    printf(&quot;%d&quot;, ans);
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://kakashisese.github.io/post/hello-gridea/</id>
-        <link href="https://kakashisese.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+</script>
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: '',
+        owner: '',
+        admin: [''],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
