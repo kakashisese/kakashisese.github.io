@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>牛客练习赛59做题心得 | 用画笔记录生活</title>
+<title>nkoj P3138 罗马游戏 | 用画笔记录生活</title>
 <meta name="description" content="艺术就是生命">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -87,139 +87,144 @@
       <div class="sm-12 md-8 col">
         <div class="paper">
           <article class="article">
-            <h1>牛客练习赛59做题心得</h1>
+            <h1>nkoj P3138 罗马游戏</h1>
             <p class="article-meta">
-              2020-03-23
+              2020-04-05
               
-                <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge warning">
+                <a href="https://kakashisese.github.io/tag/MvynIqgFz/" class="badge secondary">
                   程序竞赛
                 </a>
               
             </p>
             
             <div class="post-content">
-              <h1 id="牛客练习赛59做题心得">牛客练习赛59做题心得</h1>
-<h2 id="a题-小乔和小灰灰">A题 小乔和小灰灰</h2>
+              <h1 id="nkoj-p3138-罗马游戏"><em><strong>nkoj P3138 罗马游戏</strong></em></h1>
 <h2 id="问题描述">问题描述</h2>
 <blockquote>
-<p><a href="https://ac.nowcoder.com/acm/contest/4743/A">题目链接</a></p>
+<p>罗马皇帝很喜欢玩杀人游戏。<br>
+他的军队里面有n个人，每个人都是一个独立的团。<br>
+最近举行了一次比武测试，每个人都得到了一个分数。 皇帝对那些得分很低的人嗤之以鼻。他决定玩这样一个游戏。 它可以发两种命令：</p>
+<ol>
+<li>Merger(i, j)。把i所在的团和j所在的团合并成一个团。如果i, j有一个人是死人，那么就忽略该命令。</li>
+<li>Kill(i)。把i所在的团里面得分最低的人杀死。如果i这个人已经死了，这条命令就忽略。<br>
+皇帝希望他每发布一条kill命令，下面的将军就把被杀的人的分数报上来。（如果这条命令被忽略，那么就报0分）</li>
+</ol>
 </blockquote>
-<h2 id="一点小想法"><em><strong>一点小想法</strong></em></h2>
+<h2 id="输入格式">输入格式</h2>
 <blockquote>
-<p>这道题有很多种做法，我在这里采用的是动态规划的方法。<br>
-我们可以让原字符串和 <em><strong>XiaoQiao</strong></em>， <em><strong>XiaoHuiHui</strong></em> 两个字符串分别跑最长公共子序列，如果最长公共子序列等于字符串的长度就说明原字符串中包含这个字符串。<br>
-最后如果两个都包含，那么就输出 <em><strong>Happy</strong></em>。</p>
+<p>第一行一个整数n（1&lt;=n&lt;=300000）。n表示士兵数<br>
+第二行n个整数，其中第i个数表示编号为i的士兵的分数。（分数都是[0..10000]之间的整数）<br>
+第三行一个整数m(1&lt;=m&lt;=100000)，表示总共有m条命令<br>
+第3+i行描述第i条命令。命令为如下两种形式：<br>
+1号命令：M i j<br>
+2号命令：K i</p>
+</blockquote>
+<h2 id="输出格式">输出格式</h2>
+<blockquote>
+<p>如果命令是Kill，对应的请输出被杀人的分数。（如果这个人不存在，就输出0）</p>
+</blockquote>
+<h2 id="样例输入">样例输入</h2>
+<blockquote>
+<p>5<br>
+100 90 66 99 10<br>
+7<br>
+M 1 5<br>
+K 1<br>
+K 1<br>
+M 2 3<br>
+M 3 4<br>
+K 5<br>
+K 4</p>
+</blockquote>
+<h2 id="样例输出">样例输出</h2>
+<blockquote>
+<p>10<br>
+100<br>
+0<br>
+66</p>
+</blockquote>
+<h3 id="一点小想法"><em><strong>一点小想法</strong></em></h3>
+<blockquote>
+<p>这是一道左偏树的模板题。</p>
+<p>题目中的 <em><strong>M</strong></em> 操作就是左偏树中的合并两个。而 <em><strong>K</strong></em> 操作就是弹出堆顶的元素。</p>
+<p>需要注意的是：<em><strong>在合并堆和删除堆顶元素的过程中，不仅要维护左偏树，还要注意维护并查集。尤其是在删除堆顶元素时，我们不仅要更新被弹出元素节点的父亲，还要更新新堆顶元素节点的父亲，让新堆顶元素满足堆顶元素的父亲就是堆顶元素本身的并查集性质，方便以后继续用并查集查询。</strong></em> <a href="https://kakashisese.github.io/">这是</a>我的博客，有兴趣的朋友可以进来参观。</p>
 </blockquote>
 <h3 id="代码"><em><strong>代码</strong></em></h3>
 <pre><code class="language-c">#include &lt;cstdio&gt;
 #include &lt;algorithm&gt;
+#include &lt;queue&gt;
+#include &lt;cstdlib&gt;
 #include &lt;string&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 using namespace std;
-const int Max = 1000 + 5;
-string s, s1 = &quot;XiaoQiao&quot;, s2 = &quot;XiaoHuiHui&quot;;
-int a[100][100];
-int f[Max][Max];
-bool check(string a, string b) {
-    memset(f, 0, sizeof(f));
-    int lena = a.size(), lenb = b.size();
-    for (int i = 0; i &lt; lena; i++) {
-        for (int j = 0; j &lt; lenb; j++) {
-            if(a[i] == b[j])
-                f[i][j] = f[i - 1][j - 1] + 1;
-            else
-                f[i][j] = max(f[i - 1][j], f[i][j - 1]);
-        }
-    }
-    if(f[lena - 1][lenb - 1] == lenb) {
-        return true;
-    }
-    else
-        return false;
+const int Max = 300000 + 5;
+struct node {
+	int val, Lc, Rc, Dis;
+} tree[Max];
+int father[Max];
+int getfather(int x) {
+	if(x == father[x]) return x;
+	return father[x] = getfather(father[x]);
 }
-int main() {
-    cin &gt;&gt; s;
-    bool ans1 = check(s, s1);
-    memset(a, 0, sizeof(a));
-    bool ans2 = check(s, s2);
-    if(ans1 &amp;&amp; ans2)
-        puts(&quot;Happy&quot;);
-    else {
-        puts(&quot;emm&quot;);
-    }
-    return 0;
+int merge(int x, int y) { //合并堆
+	if(!x || !y) {
+		return x + y;
+	}
+	if(tree[x].val &gt; tree[y].val)
+		swap(x, y);
+	tree[x].Rc = merge(tree[x].Rc, y);
+	if(tree[tree[x].Rc].Dis &gt; tree[tree[x].Lc].Dis)
+		swap(tree[x].Rc, tree[x].Lc);
+	tree[x].Dis = tree[tree[x].Rc].Dis + 1;
+	return x;
 }
-</code></pre>
-<h2 id="b题-牛能和小镇">B题 牛能和小镇</h2>
-<h2 id="问题描述-2">问题描述</h2>
-<blockquote>
-<p><a href="https://ac.nowcoder.com/acm/contest/4743/B">题目链接</a></p>
-</blockquote>
-<h3 id="一点小想法-2"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>这道题是一道简单的贪心题。<br>
-题目要我们最后花的总费用尽量小，我们就要尽可能的少连边。在这里补充一个定理：<em><strong>在一个点数大于等于2的图中，要使图中每个点都连通，那么最少需要 n-1 条边。</strong></em><br>
-有了这个结论以后我们就可以开始贪心了。我们自己虚拟一个节点0位置是 <em><strong>(0,0)</strong></em> ,然后再按其他节点到节点0的距离从小到大排序然后再在相邻两个节点之间连一条边即可。</p>
-</blockquote>
-<h3 id="代码-2"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-#define ll long long
-using namespace std;
-const int Max = 1e5 + 5;
-ll v[Max], x, y, n;
+int del(int x) { //删除堆顶元素
+	int fx = getfather(x);
+	int xx = merge(tree[fx].Lc, tree[fx].Rc);
+	tree[fx].val = -1;
+	tree[fx].Dis = 1;
+	tree[fx].Lc = tree[x].Rc = 0;
+	return xx;
+}
+int n, m;
+bool die[Max];
 
 int main() {
-    scanf(&quot;%lld&quot;, &amp;n);
-    for (int i = 1; i &lt;= n; i++) {
-        scanf(&quot;%lld %lld&quot;, &amp;x, &amp;y);
-        v[i] = x * x * y + y * y * (y - 2 * x);
-    }
-
-    sort(v + 1, v + n + 1);
-    ll ans = 0;
-    for(int i = 2; i &lt;= n; i++) {
-        ans += v[i] - v[i - 1];
-    }
-    printf(&quot;%lld&quot;, ans);
-    return 0;
-}
-</code></pre>
-<h2 id="c题-装备合成">C题 装备合成</h2>
-<h2 id="问题描述-3">问题描述</h2>
-<blockquote>
-<p><a href="https://ac.nowcoder.com/acm/contest/4743/C">题目链接</a></p>
-</blockquote>
-<h3 id="一点小想法-3"><em><strong>一点小想法</strong></em></h3>
-<blockquote>
-<p>我们可以假设制造了a件1号装备，然后还可以制造的2号装备的数量为 <em><strong>min((x - 2 * a) / 4, (y - 3 * a))</strong></em> 件，再通过打表可以发现总数量是一个单峰函数，即：<em><strong>先是逐渐增大，然后过了某个点后又开始逐渐减小。</strong></em> 这个点就是我们要找的最大值。解决这种单峰函数问题，我们常用的方法是三分法。这里附一篇关于三分法的讲解：<a href="https://blog.csdn.net/caduca/article/details/43526375">三分法</a>。 最后因为有 <em><strong>t</strong></em> 组数据，三分法的复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">logn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>, 总复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">tlogn</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span></span></span></span>。可以通过。</p>
-</blockquote>
-<h3 id="代码-3"><em><strong>代码</strong></em></h3>
-<pre><code class="language-c">#include &lt;cstdio&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-int t, x, y;
-
-int main() {
-    scanf(&quot;%d&quot;, &amp;t);
-    while(t--) {
-        scanf(&quot;%d %d&quot;, &amp;x, &amp;y);
-        int Left = 0, Right = min(x / 2, y / 3);
-        while(Right - Left &gt; 100) {
-            int mid1 = Left + (Right - Left) / 3, mid2 = Right - (Right - Left) / 3;
-            if (mid1 + (min((x - 2 * mid1) / 4, y - 3 * mid1)) &gt; mid2 + (min((x - 2 * mid2) / 4, y - 3 * mid2)))
-                Right = mid2;
-            else
-                Left = mid1;
-        }
-        int ans = 0;
-        for (int i = Left; i &lt;= Right; i++) {
-            ans = max(ans, i + min((x - 2 * i) / 4, y - 3 * i));
-        }
-        printf(&quot;%d\n&quot;, ans);
-    }
-    return 0;
+	scanf(&quot;%d&quot;, &amp;n);
+	for(int i = 1; i &lt;= n; i++) {
+		scanf(&quot;%d&quot;, &amp;tree[i].val);
+		tree[i].Dis = 1;
+		father[i] = i;
+	}
+	scanf(&quot;%d&quot;, &amp;m);
+	while(m--) {
+		char opt;
+		cin &gt;&gt; opt;
+		if(opt == 'M') {
+			int a, b;
+			scanf(&quot;%d %d&quot;, &amp;a, &amp;b);
+			if(die[a] || die[b]) continue;
+			a = getfather(a); b = getfather(b);
+			if(a == b) continue;
+			int p = merge(a, b);
+			father[a] = father[b] = p;//更新并查集
+		}
+		else {
+			int a;
+			scanf(&quot;%d&quot;, &amp;a);
+			if(die[a]) {
+				puts(&quot;0&quot;);
+				continue;
+			}
+			a = getfather(a);		
+			printf(&quot;%d\n&quot;, tree[a].val);
+			father[a] = del(a);//更新被弹出节点的父亲
+			die[a] = true;
+			father[father[a]] = father[a]; //更新新堆顶元素的父亲
+		}
+	}
+	return 0;
 }
 </code></pre>
 
@@ -232,9 +237,9 @@ int main() {
               <div class="next">
                 下一篇
               </div>
-              <a href="https://kakashisese.github.io/post/luogu-p1021-you-piao-mian-zhi-she-ji/">
+              <a href="https://kakashisese.github.io/post/xian-lai-wu-shi-lin-mo-liao-yi-zhang-hua/">
                 <h3 class="post-title">
-                  luogu p1021 邮票面值设计
+                  闲来无事临摹了一张画
                 </h3>
               </a>
             </div>
@@ -353,11 +358,11 @@ int main() {
           程序竞赛
         </a>
       
-        <a href="https://kakashisese.github.io/tag/C_U3gcTly/" class="badge warning">
+        <a href="https://kakashisese.github.io/tag/C_U3gcTly/" class="badge success">
           漫画Comic
         </a>
       
-        <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge success">
+        <a href="https://kakashisese.github.io/tag/lf3D6LbX8/" class="badge secondary">
           Gridea
         </a>
       
